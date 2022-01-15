@@ -1,0 +1,6 @@
+modifier_data/roi_parts/*
+net_v13_3D_roi_regions_densenet121/test.py
+project_sota.sublime-workspace
+project_sota.sublime-project
+densenet121_inp_channel_3_tch_0_top_True_default.h5
+densenet121_inp_channel_3_tch_0_top_True_matching_input_shape.h5
