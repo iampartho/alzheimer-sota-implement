@@ -27,7 +27,7 @@ GLOBAL_AUG = None
 THREADS = 4
 SHAPE_SIZE = (96, 128, 128, 3)
 KFOLD_NUMBER = 5
-FOLD_LIST = [0, 1, 2, 3, 4]
+FOLD_LIST = [25]
 KFOLD_SPLIT_FILE = OUTPUT_PATH + 'kfold_split_large_v2_5_42.csv'
 DIR_PREFIX = os.path.basename(os.path.dirname(__file__)) + '_' + os.path.basename(__file__)
 #MODELS_PATH_KERAS = MODELS_PATH + DIR_PREFIX + '_' + os.path.basename(KFOLD_SPLIT_FILE)[:-4] + '/'
@@ -228,8 +228,8 @@ if __name__ == '__main__':
     start_time = time.time()
     random.seed(start_time)
     np.random.seed(int(start_time))
-    for kf in range(KFOLD_NUMBER):
-        if kf not in FOLD_LIST:
-            continue
+    for kf in FOLD_LIST:
+        # if kf not in FOLD_LIST:
+        #     continue
         train_single_model(kf)
     print('Time: {:.0f} sec'.format(time.time() - start_time))
