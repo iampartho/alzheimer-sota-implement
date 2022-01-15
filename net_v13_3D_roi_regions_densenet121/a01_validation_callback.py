@@ -96,7 +96,7 @@ class ModelCheckpoint_Stat(Callback):
         if self.epochs_since_last_save >= self.period:
             self.epochs_since_last_save = 0
 
-            self.model.save(self.filepath_static, overwrite=True)
+            # self.model.save(self.filepath_static, overwrite=True) # eita comment out na korle chole na
             score, _ = validate_files(self.model, self.preprocess_input, self.cubes, self.answs, self.shape_size, self.batch_size, verbose=False)
 
             logs['score'] = score
