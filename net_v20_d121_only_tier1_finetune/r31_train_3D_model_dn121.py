@@ -10,6 +10,8 @@ if __name__ == '__main__':
     os.environ["KERAS_BACKEND"] = "tensorflow"
     os.environ["CUDA_VISIBLE_DEVICES"] = "{}".format(gpu_use)
 
+import sys
+sys.path.insert(1, '/content/alzheimer-sota-implement')
 
 from a00_common_functions import *
 from multiprocessing.pool import ThreadPool
@@ -28,7 +30,8 @@ KFOLD_NUMBER = 5
 FOLD_LIST = [0, 1, 2, 3, 4]
 KFOLD_SPLIT_FILE = OUTPUT_PATH + 'kfold_split_large_v2_5_42.csv'
 DIR_PREFIX = os.path.basename(os.path.dirname(__file__)) + '_' + os.path.basename(__file__)
-MODELS_PATH_KERAS = MODELS_PATH + DIR_PREFIX + '_' + os.path.basename(KFOLD_SPLIT_FILE)[:-4] + '/'
+#MODELS_PATH_KERAS = MODELS_PATH + DIR_PREFIX + '_' + os.path.basename(KFOLD_SPLIT_FILE)[:-4] + '/'
+MODELS_PATH_KERAS = './save_models/'
 if not os.path.isdir(MODELS_PATH_KERAS):
     os.mkdir(MODELS_PATH_KERAS)
 
