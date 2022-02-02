@@ -11,7 +11,7 @@ if __name__ == '__main__':
     os.environ["CUDA_VISIBLE_DEVICES"] = "{}".format(gpu_use)
 
 import sys
-sys.path.insert(1, '/content/alzheimer-sota-implement')
+sys.path.insert(1, './alzheimer-sota-implement')
 
 from a00_common_functions import *
 from multiprocessing.pool import ThreadPool
@@ -186,7 +186,7 @@ def train_single_model(fold_number):
     print(valid_data.shape, valid_answ.shape)
 
     callbacks = [
-        # ModelCheckpoint(cache_model_path, monitor='val_loss', verbose=0),
+        ModelCheckpoint('./save_models/epoch_end_save.h5', monitor='val_loss', verbose=0),
         ModelCheckpoint_Stat(best_model_path, cache_model_path,
                              validation_data=(valid_data, valid_answ, preproc_input, SHAPE_SIZE, batch_size_valid),
                              save_best_only=True,
