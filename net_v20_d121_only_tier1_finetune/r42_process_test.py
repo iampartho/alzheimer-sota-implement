@@ -11,6 +11,9 @@ if __name__ == '__main__':
     os.environ["CUDA_VISIBLE_DEVICES"] = "{}".format(gpu_use)
 
 
+import sys
+sys.path.insert(1, '/content/alzheimer-sota-implement')
+
 from net_v20_d121_only_tier1_finetune.r31_train_3D_model_dn121 import *
 from net_v20_d121_only_tier1_finetune.a01_validation_callback import *
 
