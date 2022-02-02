@@ -29,7 +29,7 @@ import gc
 random.seed(2016)
 np.random.seed(2016)
 
-ROOT_PATH = './alzheimer-sota-implement/'
+ROOT_PATH = '/kaggle/working/alzheimer-sota-implement'
 INPUT_PATH = ROOT_PATH + 'input/'
 OUTPUT_PATH = ROOT_PATH + 'modified_data/'
 if not os.path.isdir(OUTPUT_PATH):
