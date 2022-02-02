@@ -11,7 +11,7 @@ if __name__ == '__main__':
     os.environ["CUDA_VISIBLE_DEVICES"] = "{}".format(gpu_use)
 
 import sys
-sys.path.insert(1, '/kaggle/working/alzheimer-sota-implement')
+sys.path.insert(1, '/kaggle/working/alzheimer-sota-implement/')
 
 from a00_common_functions import *
 from multiprocessing.pool import ThreadPool
