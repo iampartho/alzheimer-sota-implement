@@ -174,8 +174,8 @@ def train_single_model(fold_number):
     model.compile(optimizer=optim, loss=loss_to_use, metrics=['acc'])
 
     print('Fitting model...')
-    batch_size_train = 6
-    batch_size_valid = 8
+    batch_size_train = 3
+    batch_size_valid = 6
     print('Batch size: {}'.format(batch_size_train))
     steps_per_epoch = 1000
     print(get_model_memory_usage(batch_size_train, model))
